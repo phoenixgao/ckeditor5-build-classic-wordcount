@@ -35,7 +35,9 @@
 			const wordCountPlugin = editor.plugins.get( 'WordCount' );
 			const wordCountWrapper = document.getElementById( 'word-count' );
 
-			wordCountWrapper.appendChild( wordCountPlugin.wordCountContainer );
+			if (wordCountWrapper) {
+        wordCountWrapper.appendChild( wordCountPlugin.wordCountContainer );
+      }
 		} )
 		.catch( err => {
 			console.error( err.stack );
